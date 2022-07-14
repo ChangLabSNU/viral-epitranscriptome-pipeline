@@ -118,7 +118,7 @@ rule coverage:
 rule extract_junction:
 	input: 'alignments/{name}.viral_linear.sorted.bam'
 	output: 'junctions/{name}.large_deletions.bed.gz'
-	shell: 'python hy_/scripts/extract-junctions.py {input} | \
+	shell: 'python ../scripts/extract-junctions.py {input} | \
             bgzip -c /dev/stdin > {output}'
 
 rule annotate_jump_landings:
